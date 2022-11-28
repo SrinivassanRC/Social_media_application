@@ -1,0 +1,1 @@
+web gunicorn travelnomad.wsgi:application --log-file -
