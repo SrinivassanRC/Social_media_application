@@ -129,8 +129,13 @@ def signin(request):
 
 
     if request.method=="POST":
-        username=request.POST['username']
-        password=request.POST['password']
+        if "login" in request.POST:
+            username=request.POST['username']
+            password=request.POST['password']
+        elif "guest" in request.POST:
+            username="batman"
+            password="admin"
+
 
         user = auth.authenticate(username=username, password=password)
 

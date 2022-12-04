@@ -28,7 +28,7 @@
                         <!-- Logo -->
                         <div id="logo" class=" uk-hidden@s">
                             <a href="home.html">
-                                <b><h1 style="text-transform: uppercase;">Social Book</h1></b>
+                                <b><h1 style="text-transform: uppercase;">Travel Nomad</h1></b>
                             </a>
                         </div>
 
@@ -130,7 +130,7 @@
                                 class="-mt-5 -mx-5 bg-gradient-to-t from-gray-100 to-gray-50 border-b font-bold px-6 py-3">
                                 Notification </h4>
                             <ul class="dropdown_scrollbar" data-simplebar>
-                                <li>
+                                <!-- <li>
                                     <a href="#">
                                         <div class="drop_avatar"> <img src="{% static 'assets/images/avatars/avatar-1.jpg' %}" alt="">
                                         </div>
@@ -141,7 +141,7 @@
                                             <span class="time-ago"> 2 hours ago </span>
                                         </div>
                                     </a>
-                                </li>
+                                </li> -->
                                 
 
                             </ul>
@@ -159,14 +159,14 @@
                                 Messages </h4>
                             <ul class="dropdown_scrollbar" data-simplebar>
                                 <li>
-                                    <a href="#">
+                                    <!-- <a href="#">
                                         <div class="drop_avatar"> <img src="{% static 'assets/images/avatars/avatar-1.jpg' %}" alt="">
                                         </div>
                                         <div class="drop_content">
                                             <strong> Taiye </strong> <time> 6:43 PM</time>
                                             <p> hi tomi </p>
                                         </div>
-                                    </a>
+                                    </a> -->
                                 </li>
                                 
 
@@ -182,10 +182,12 @@
                         </a>
                         <div uk-drop="mode: click;offset:9" class="header_dropdown profile_dropdown border-t">
                             <ul>
+                                <li><a href="/profile/{{user.username}}"> Profile</a></li>
                                 <li><a href="/setting"> Account setting </a> </li>
                                 <!-- <li><a href="explore.html">explore </a> </li>
                                 <li><a href="#"> Help </a> </li> -->
                                 <li><a href="/logout"> Log Out</a></li>
+                                
                             </ul>
                         </div>
 
@@ -303,7 +305,7 @@
                                         {%elif post.no_of_likes == 2 %}
                                         Liked by <strong> {% for user in post.liked_user.all|slice:":1" %}<a href="/profile/{{user}}">{{ user }}</a> {% endfor %} </strong>and <strong>1 person</strong>
                                         {%else%}
-                                        Liked by <strong> {% for user in post.liked_user.all|slice:":1" %}<a href="/profile/{{user}}"></a>{{ user }}</a> {% endfor %} </strong> and <strong>({{post.no_of_likes}}-1) people</strong>
+                                        Liked by <strong> {% for user in post.liked_user.all|slice:":1" %}<a href="/profile/{{user}}"></a>{{ user }}</a> {% endfor %} </strong> and <strong>{{post.no_of_likes}} people</strong>
                                         {%endif%}
                                         
                                     </div>
